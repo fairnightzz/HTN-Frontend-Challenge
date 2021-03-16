@@ -19,16 +19,12 @@
 
       <v-spacer />
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
       <v-btn icon @click="toggleTheme">
         <v-icon>mdi-moon-waning-crescent</v-icon>
       </v-btn>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
-      temporary
       app
       color="accent"
     >
@@ -49,7 +45,7 @@
         <v-spacer />
         <v-list-item v-if="isloggedIn" link @click="logout">
           <v-list-item-icon>
-            <v-icon>mdi-logout-variant</v-icon>
+            <v-icon>mdi-logout</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
@@ -60,7 +56,7 @@
         <v-list-item v-else @click="login">
           <v-list-item-icon>
             <v-icon>
-              mdi-login-variant
+              mdi-login
             </v-icon>
           </v-list-item-icon>
           <v-list-item-content>
@@ -101,10 +97,12 @@ export default {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
     logout (e) {
+      this.drawer = !this.drawer
       this.$store.commit('auth/setLoggedIn', false)
       this.$router.push('/')
     },
     login (e) {
+      this.drawer = !this.drawer
       this.$router.push('login')
     }
   }

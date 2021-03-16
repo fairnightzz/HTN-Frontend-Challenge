@@ -3,12 +3,15 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - htn-frontend-challenge',
-    title: 'htn-frontend-challenge',
+    titleTemplate: '%s - HackTheNorth Frontend Challenge',
+    title: 'Home',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Hack the North is Canada’s biggest hackathon, happening January 15-17, 2021. With 36 hours of mentorship, resources, and unique experiences, we want to make it easy for anyone to dream big.' },
+      { hid: 'og:image', property: 'og:image', content: '/cover.png' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'keywords', name: 'keywords', content: 'HackTheNorth, computer science, programming, software, development, uwaterloo, hackathon' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
