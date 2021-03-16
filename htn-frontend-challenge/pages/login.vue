@@ -1,12 +1,12 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <h1>Login</h1>
+  <v-container fill-height class="login">
+    <v-row justify="center" align="center">
+      <v-col cols="12" sm="8" md="6">
+        <div class="text-center">
+          <h1>Login</h1>
 
-        <v-form>
-          <v-container>
-            <v-row>
+          <v-form class="align-items justify-content">
+            <v-row align="center" justify="center">
               <v-col
                 cols="12"
                 md="4"
@@ -35,11 +35,11 @@
             <v-btn @click="onLogin">
               Login
             </v-btn>
-          </v-container>
-        </v-form>
-      </div>
-    </v-col>
-  </v-row>
+          </v-form>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -73,3 +73,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .login {
+    height: 80vh;
+  }
+
+</style>

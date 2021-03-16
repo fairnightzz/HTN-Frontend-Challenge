@@ -52,6 +52,10 @@ export default {
       default: {
         endpoint: 'https://api.hackthenorth.com/v3/graphql',
         options: {}
+      },
+      secondClient: {
+        endpoint: 'https://htn.zhehaizhang.com/graphql',
+        options: {}
       }
     }
   },
