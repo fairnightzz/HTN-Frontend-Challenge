@@ -27,6 +27,7 @@
       v-model="drawer"
       app
       color="accent"
+      temporary
     >
       <v-list dense nav>
         <div v-if="isloggedIn">
