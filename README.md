@@ -1,5 +1,7 @@
 # HTN-Frontend-Challenge
 View my frontend in action [here](https://htnweb.zhehaizhang.com)
+Email: bairddixon@frolix.com
+Password: password
 
 ## Part 2. Writeup
 
