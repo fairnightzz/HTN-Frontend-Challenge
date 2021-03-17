@@ -5,6 +5,7 @@
       height="54"
       class="d-flex"
     >
+      <!-- Previous and Next Button for navigating calendar by month -->
       <v-btn
         icon
         class="ma-2"
@@ -21,6 +22,11 @@
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </v-sheet>
+    <!-- Display Calendar -->
+    <!-- focus is the navigation -->
+    <!-- Choose how calendar is formatted by weekdays and type month -->
+    <!-- :events binds all events from graphql query -->
+    <!-- @change for updating events -->
     <v-sheet height="600">
       <v-calendar
         ref="calendar"
@@ -57,32 +63,19 @@ export default {
             permission
             start_time
             end_time
-            description
-            speakers {
-              name
-              profile_pic
-            }
-            public_url
-            private_url
-            related_events
           }
         }`
       const events = await this.$graphql.default.request(query)
-      // filter out right here
       let nonSorted = []
-      if (!this.$store.state.auth.isLoggedIn) {
-        // eslint-disable-next-line prefer-regex-literals
-        nonSorted = events.events.filter((el) => { return el.permission === 'public' })
-      } else {
-        nonSorted = events.events
-      }
+      nonSorted = events.events
+      // Sort events in order
       const temp = nonSorted.sort((a, b) => (a.start_time > b.start_time) ? 1 : -1).map((e) => {
         e.start = e.start_time
         e.end = e.end_time
-
         return e
       })
       const newevents = []
+      // Set up events properly for calendar
       temp.forEach((e) => {
         const event = {
           start: new Date(e.start_time),
@@ -94,9 +87,6 @@ export default {
         newevents.push(event)
       })
       this.events = newevents
-    },
-    getEventColor (event) {
-      return event.color
     }
   }
 }

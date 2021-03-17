@@ -1,6 +1,7 @@
 <template>
   <v-row justify="center" align="center" class="justify-items ma-5">
     <v-card>
+      <!-- Display User Info from query (htn backend challenge) -->
       <v-card-title>User Info</v-card-title>
       <v-list>
         <v-list-item>
@@ -17,6 +18,7 @@
         </v-list-item>
       </v-list>
       <v-list>
+        <!-- Display User Skills from query (htn backend challenge) -->
         <v-list-item class="font--bold">
           Skills
         </v-list-item>
@@ -34,13 +36,16 @@ export default {
   name: 'Profile',
   data: () => {
     return {
+      // Variable for store user data
       user: {}
     }
   },
+  // Gets user data the moment profile page is loaded
   mounted () {
     this.getUser()
   },
   methods: {
+    // Sets the user variable to values found received in query
     async getUser () {
       const query = gql`
         query {
@@ -55,9 +60,9 @@ export default {
             }
           }
         }`
+      // SecondClient is my backend link
       const user = await this.$graphql.secondClient.request(query)
       this.user = user.user
-      console.log(this.user)
     }
   }
 }

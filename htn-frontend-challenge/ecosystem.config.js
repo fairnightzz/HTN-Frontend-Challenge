@@ -1,3 +1,4 @@
+// For pm2 deployment on server
 module.exports = {
   apps: [
     {

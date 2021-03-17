@@ -1,3 +1,4 @@
+// Accessing static files and requiring files, as well as ignores
 {
   "compilerOptions": {
     "baseUrl": ".",

@@ -5,6 +5,7 @@ export default {
   head: {
     titleTemplate: '%s - HackTheNorth Frontend Challenge',
     title: 'Home',
+    // Important for nice looking metadata
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,6 +24,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Persistent State attempt
   plugins: [
     { src: '~/plugins/persistedState.client.js' }
   ],
@@ -50,6 +52,7 @@ export default {
     middleware: ['auth']
   },
 
+  // For sending queries/mutations to the backend
   graphql: {
     clients: {
       default: {
@@ -71,6 +74,7 @@ export default {
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  // For theme modification and dark/light theme
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -103,6 +107,7 @@ export default {
       }
     }
   },
+  // Listening on different port
   server: {
     port: 8000
   },
