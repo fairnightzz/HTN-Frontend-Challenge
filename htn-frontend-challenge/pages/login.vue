@@ -64,7 +64,7 @@ export default {
   }),
   methods: {
     onLogin (e) {
-      if (this.form.email.length > 0 && this.form.password.length > 0) {
+      if (this.form.email.length > 0 && this.form.password.length > 0 && this.form.email === 'bairddixon@frolix.com' && this.form.password === 'password') {
         this.$store.commit('auth/setEmail', this.form.email)
         this.$store.commit('auth/setLoggedIn', true)
         this.$router.push('/')
