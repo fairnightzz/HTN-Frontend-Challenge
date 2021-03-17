@@ -76,6 +76,8 @@ given the amount of time, I wasn't able to.
 so that users can also view events on the schedule page.
 3. I would add better mobile breakpoints so its completely flawless on mobile.
 4. Fully connect the frontend to the backend - I've already started the first step (profile), and using graphql api, everything will come naturally.
+5. Use less obvious ui framework because Vuetify is very easy to tell apart from others. I would like to use Tailwind css for more custom design and less components that are already built
+6. Adding other features that are relevant in hackathons, such as the FAQ, sponsors, registration, etc.
 
 ### Conclusion
 Over these past few days, I had a lot of fun creating every part of this app. Thank you for creating this challenge!
